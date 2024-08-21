@@ -6,5 +6,5 @@ import { Component } from '@angular/core';
   styleUrl: './app.component.less'
 })
 export class AppComponent {
-  title = 'pecan';
+  title = 'plain-text docs';
 }

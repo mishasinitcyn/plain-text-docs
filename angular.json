@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "pecan": {
+    "plaintextdocs": {
       "projectType": "application",
       "schematics": {
         "@schematics/angular:component": {
@@ -24,7 +24,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:application",
           "options": {
-            "outputPath": "dist/pecan",
+            "outputPath": "dist/plaintextdocs",
             "index": "src/index.html",
             "browser": "src/main.ts",
             "polyfills": [
@@ -77,10 +77,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "buildTarget": "pecan:build:production"
+              "buildTarget": "plaintextdocs:build:production"
             },
             "development": {
-              "buildTarget": "pecan:build:development"
+              "buildTarget": "plaintextdocs:build:development"
             }
           },
           "defaultConfiguration": "development"
