@@ -37,13 +37,15 @@ import { NzTypographyModule } from 'ng-zorro-antd/typography';
 import { NzAvatarModule } from 'ng-zorro-antd/avatar';
 import { NzToolTipModule } from 'ng-zorro-antd/tooltip';
 import { IconDefinition } from '@ant-design/icons-angular';
+import { NzDividerModule } from 'ng-zorro-antd/divider';
 import { NzIconModule } from 'ng-zorro-antd/icon';
 
 import { ClipboardModule } from '@angular/cdk/clipboard';
 
-import { GithubOutline, MediumOutline, YoutubeOutline } from '@ant-design/icons-angular/icons';
 import { LayoutComponent } from './assets/layout/layout.component';
-const icons: IconDefinition[] = [ GithubOutline, MediumOutline, YoutubeOutline ];
+import { DocumentInfoComponent } from './document-info/document-info.component';
+import { DownloadOutline, GithubOutline, LikeOutline, MediumOutline, YoutubeOutline } from '@ant-design/icons-angular/icons';
+const icons: IconDefinition[] = [ GithubOutline, MediumOutline, YoutubeOutline, DownloadOutline, LikeOutline ];
 
 
 
@@ -51,7 +53,8 @@ const icons: IconDefinition[] = [ GithubOutline, MediumOutline, YoutubeOutline ]
   declarations: [
     AppComponent,
     HeaderComponent,
-    LayoutComponent
+    LayoutComponent,
+    DocumentInfoComponent
   ],
   imports: [
     BrowserModule,
@@ -81,6 +84,7 @@ const icons: IconDefinition[] = [ GithubOutline, MediumOutline, YoutubeOutline ]
     NzToolTipModule,
     ClipboardModule,
     NzMessageModule,
+    NzDividerModule,
     RouterModule
   ],
   providers: [{ provide: NZ_I18N, useValue: en_US }],

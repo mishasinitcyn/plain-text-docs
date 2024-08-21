@@ -1,0 +1,28 @@
+<div class="document-container">
+
+  <div class="document-header">
+    <h1 nz-typography>{{ document.name }}</h1>
+    <div class="document-info">
+      <nz-tag [nzColor]="'blue'">{{ document.category }}</nz-tag>
+    </div>
+  </div>
+  <div style="display: flex; flex-direction: column; align-items: flex-start;;">
+    <p nz-typography class="document-description">{{ document.description }}</p>
+    <span nz-typography nzType="secondary">Last updated: {{ document.lastUpdated | date:'yyyy-MM-dd' }}</span>
+  </div>
+  <nz-card class="document-content">
+    <article nz-typography>
+      <p>{{ document.content }}</p>
+    </article>
+  </nz-card>
+  
+  <div class="document-footer">
+    <span class="likes">
+      <i nz-icon nzType="like" nzTheme="outline"></i>
+      {{ document.likes }} likes
+    </span>
+    <button nz-button nzType="default" (click)="downloadDocument()" style="border-radius: 5px;">
+      <i nz-icon nzType="download"></i>Download
+    </button>
+  </div>
+</div>
