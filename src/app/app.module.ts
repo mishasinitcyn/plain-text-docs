@@ -17,6 +17,8 @@ registerLocaleData(en);
 import { HeaderComponent } from './assets/header/header.component';
 
 import { NzButtonModule } from 'ng-zorro-antd/button';
+import { ReactiveFormsModule } from '@angular/forms';
+import { NzFormModule } from 'ng-zorro-antd/form';
 import { NzInputModule } from 'ng-zorro-antd/input';
 import { NzTabsModule } from 'ng-zorro-antd/tabs';
 import { NzCardModule } from 'ng-zorro-antd/card';
@@ -45,6 +47,7 @@ import { ClipboardModule } from '@angular/cdk/clipboard';
 import { LayoutComponent } from './assets/layout/layout.component';
 import { DocumentInfoComponent } from './document-info/document-info.component';
 import { DownloadOutline, GithubOutline, LikeOutline, MediumOutline, YoutubeOutline } from '@ant-design/icons-angular/icons';
+import { DocumentCreateComponent } from './document-create/document-create.component';
 const icons: IconDefinition[] = [ GithubOutline, MediumOutline, YoutubeOutline, DownloadOutline, LikeOutline ];
 
 
@@ -54,7 +57,8 @@ const icons: IconDefinition[] = [ GithubOutline, MediumOutline, YoutubeOutline, 
     AppComponent,
     HeaderComponent,
     LayoutComponent,
-    DocumentInfoComponent
+    DocumentInfoComponent,
+    DocumentCreateComponent
   ],
   imports: [
     BrowserModule,
@@ -63,6 +67,8 @@ const icons: IconDefinition[] = [ GithubOutline, MediumOutline, YoutubeOutline, 
     FormsModule,
     AppRoutingModule,
     NzButtonModule,
+    ReactiveFormsModule,
+    NzFormModule,
     NzInputModule,
     NzTabsModule,
     NzCardModule,

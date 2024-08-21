@@ -4,8 +4,8 @@ import express from 'express';
 import { fileURLToPath } from 'node:url';
 import { dirname, join, resolve } from 'node:path';
 import AppServerModule from './src/main.server';
+import documentRoutes from './routes/document';
 
-// The Express app is exported so that it can be used by serverless Functions.
 export function app(): express.Express {
   const server = express();
   const serverDistFolder = dirname(fileURLToPath(import.meta.url));
@@ -17,8 +17,15 @@ export function app(): express.Express {
   server.set('view engine', 'html');
   server.set('views', browserDistFolder);
 
-  // Example Express Rest API endpoints
-  // server.get('/api/**', (req, res) => { });
+  // Increase JSON payload limit (adjust the limit as needed)
+  server.use(express.json({ limit: '50mb' }));
+  
+  // If you're also using URL-encoded bodies, increase their limit too
+  server.use(express.urlencoded({ limit: '50mb', extended: true }));
+
+  // Use the document routes
+  server.use('/api/documents', documentRoutes);
+
   // Serve static files from /browser
   server.get('**', express.static(browserDistFolder, {
     maxAge: '1y',
