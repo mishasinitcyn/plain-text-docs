@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { DocumentService } from '../services/document.service';
+import { NzMessageService } from 'ng-zorro-antd/message';
 
 @Component({
   selector: 'app-document-info',
@@ -10,7 +11,7 @@ import { DocumentService } from '../services/document.service';
 export class DocumentInfoComponent implements OnInit {
   document: any;
 
-  constructor(private route: ActivatedRoute, private documentService: DocumentService) {}
+  constructor(private route: ActivatedRoute, private documentService: DocumentService, private message: NzMessageService) {}
 
   ngOnInit() {
     this.route.params.subscribe(params => {
@@ -31,6 +32,9 @@ export class DocumentInfoComponent implements OnInit {
   }
 
   downloadDocument() {
-    console.log('Downloading document:', this.document.name);
+    this.message.error("Error");
+    this.message.info("Info");
+    this.message.success("Success");
+    this.message.warning("Warning");
   }
 }

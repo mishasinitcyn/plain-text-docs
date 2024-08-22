@@ -1,4 +1,3 @@
-// document.service.ts
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
@@ -7,7 +6,7 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class DocumentService {
-  private apiUrl = '/api/documents'; // Adjust this if your API URL is different
+  private apiUrl = '/api/documents';
 
   constructor(private http: HttpClient) { }
 

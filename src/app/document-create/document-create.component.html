@@ -1,5 +1,6 @@
 <app-layout>
-  <form nz-form [formGroup]="documentForm" (ngSubmit)="submitForm()">
+  <div class="document-container">
+    <form nz-form [formGroup]="documentForm" (ngSubmit)="submitForm()">
       <nz-form-item>
         <nz-form-label [nzSpan]="6" nzRequired>Title</nz-form-label>
         <nz-form-control [nzSpan]="14" nzErrorTip="Please input the title!">
@@ -41,4 +42,5 @@
         </nz-form-control>
       </nz-form-item>
     </form>
+  </div>
 </app-layout>

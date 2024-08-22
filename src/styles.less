@@ -1,1 +1,84 @@
-/* You can add global styles to this file, and also import other style files */
+@import "../node_modules/ng-zorro-antd/ng-zorro-antd.variable.less";
+
+@blue: #a2d2ff;
+@light-blue: #bde0fe;
+@pink: #ffafcc;
+@light-pink: #ffc8dd;
+@purple: #cdb4db;
+@eggshell: #f9f7f3;
+
+
+@salmon: hsl(0, 100%, 84%);
+@orange: #ffd6a5;
+@yellow: #fdffb6;
+@green: #caffbf;
+@light-blue: #9bf6ff;
+@blue: #a0c4ff;
+@purple: #bdb2ff;
+@pink: #ffc6ff;
+@white: #fffffc;
+
+@border-radius-base: 7px;
+
+@btn-border-radius-base: 7px;
+@card-radius: 20px;
+@tag-border-radius: 7px;
+
+// @blue-6: @blue;
+// // @base-primary: black;
+// @primary-color: @blue;
+// @default-color: @pink;
+// @info-color: @yellow;
+// @success-color: @green;
+// @processing-color: @primary-color;
+// @error-color: @salmon;
+// @highlight-color: @pink;
+// @warning-color: @orange;
+
+// @body-background: @eggshell;
+
+.ant-card {
+  border-radius: @card-radius;
+}
+
+// body {
+//   background-color: #f9f7f3;
+// }
+
+.primary-button{
+  background-color: #ee6c4d;
+  border: none;
+
+  &:active {
+    background-color: #2f2f2f;
+  }
+
+  &:hover {
+    background-color: #2f2f2f;
+  }
+}
+
+[nz-button] {
+  background-color: #2f2f2f !important;
+  color: white !important;
+  border: none;
+
+  &:active,
+  &:focus,
+  &:hover {
+    background-color: #3f3f3f !important;
+    color: white !important;
+    border: none;
+  }
+
+  // Override for clicked state
+  &:focus-visible {
+    outline: none;
+    box-shadow: 0 0 0 2px rgba(47, 47, 47, 0.2);
+  }
+
+  // Ensure text color stays white for all states
+  span {
+    color: white !important;
+  }
+}
