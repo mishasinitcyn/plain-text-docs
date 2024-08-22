@@ -1,44 +1,44 @@
 <app-layout>
   <div class="document-container">
-    <form nz-form [formGroup]="documentForm" (ngSubmit)="submitForm()">
+    <form nz-form [formGroup]="documentForm" (ngSubmit)="submitForm()" nzLayout="vertical">
       <nz-form-item>
-        <nz-form-label [nzSpan]="6" nzRequired>Title</nz-form-label>
-        <nz-form-control [nzSpan]="14" nzErrorTip="Please input the title!">
+        <nz-form-label nzRequired>Title</nz-form-label>
+        <nz-form-control nzErrorTip="Please input the title!">
           <input nz-input formControlName="title" placeholder="Document Title" />
         </nz-form-control>
       </nz-form-item>
     
       <nz-form-item>
-        <nz-form-label [nzSpan]="6">Description</nz-form-label>
-        <nz-form-control [nzSpan]="14">
+        <nz-form-label>Description</nz-form-label>
+        <nz-form-control>
           <textarea nz-input formControlName="description" [nzAutosize]="{ minRows: 3, maxRows: 5 }" placeholder="Document Description"></textarea>
         </nz-form-control>
       </nz-form-item>
     
       <nz-form-item>
-        <nz-form-label [nzSpan]="6" nzRequired>Content</nz-form-label>
-        <nz-form-control [nzSpan]="14" nzErrorTip="Please input the content!">
+        <nz-form-label nzRequired>Content</nz-form-label>
+        <nz-form-control nzErrorTip="Please input the content!">
           <textarea nz-input formControlName="content" [nzAutosize]="{ minRows: 5, maxRows: 15 }" placeholder="Document Content"></textarea>
         </nz-form-control>
       </nz-form-item>
     
       <nz-form-item>
-        <nz-form-label [nzSpan]="6">Category</nz-form-label>
-        <nz-form-control [nzSpan]="14">
+        <nz-form-label>Category</nz-form-label>
+        <nz-form-control>
           <input nz-input formControlName="category" placeholder="Document Category" />
         </nz-form-control>
       </nz-form-item>
     
       <nz-form-item>
-        <nz-form-label [nzSpan]="6">File Type</nz-form-label>
-        <nz-form-control [nzSpan]="14">
+        <nz-form-label>File Type</nz-form-label>
+        <nz-form-control>
           <input nz-input formControlName="file_type" placeholder="File Type" />
         </nz-form-control>
       </nz-form-item>
     
       <nz-form-item>
-        <nz-form-control [nzOffset]="6" [nzSpan]="14">
-          <button nz-button nzType="primary" [disabled]="!documentForm.valid">Create Document</button>
+        <nz-form-control>
+          <button nz-button nzType="primary" [disabled]="!documentForm.valid">Upload Document</button>
         </nz-form-control>
       </nz-form-item>
     </form>

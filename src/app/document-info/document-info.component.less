@@ -1,48 +1,90 @@
-
 .document-container {
-    max-width: 98vw;
-    margin: 0 auto;
-    padding: 24px;
-  }
-  
-  .document-header {
-    display: flex;
-    justify-content: space-between;
+  max-width: 98vw;
+  margin: 0 auto;
+  padding: 24px;
+}
+
+.document-layout {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+
+  @media (min-width: 900px) {
+    flex-direction: row;
     align-items: flex-start;
-    margin-bottom: 16px;
   }
-  
-  .document-info {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-end;
-    gap: 8px;
+}
+
+.document-metadata {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+
+  @media (min-width: 900px) {
+    min-width: 400px;
+    width: 30%;
+    max-width: 500px;
   }
-  
-  .document-description {
-    margin-bottom: 16px;
-    font-style: italic;
-    color: rgba(0, 0, 0, 0.65);
+
+  height: auto;
+  min-height: auto;
+}
+
+.document-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+}
+
+h1 {
+  margin-bottom: 0;
+  flex: 1;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.document-description {
+  font-style: italic;
+  color: rgba(0, 0, 0, 0.65);
+}
+
+.document-content {
+  flex: 1;
+  max-height: 60vh;
+  overflow-y: auto;
+
+  @media (min-width: 900px) {
+    width: 70%;
+    max-height: 80vh;
   }
-  
-  .document-content {
-    margin-top: 16px;
-    margin-bottom: 16px;
-    max-height: 400px;
-    overflow-y: auto;
-  }
-  
-  .document-footer {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-top: 16px;
-  }
-  
-  .likes {
-    font-size: 16px;
-  }
-  
-  .likes i {
+}
+
+.document-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: auto;
+}
+
+.likes {
+  font-size: 16px;
+
+  i {
     margin-right: 8px;
   }
+}
+
+// Ensure nz-tag doesn't stretch
+:host ::ng-deep nz-tag {
+  display: inline-block;
+  flex-shrink: 0;
+}
+
+// Ensure the nz-card component allows its content to determine its height
+:host ::ng-deep .document-metadata.ant-card .ant-card-body {
+  height: auto;
+  display: flex;
+  flex-direction: column;
+}
