@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
-import { Observable } from 'rxjs';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { Observable, of } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -16,5 +16,10 @@ export class DocumentService {
 
   createDocument(document: any): Observable<any> {
     return this.http.post<any>(this.apiUrl, document);
+  }
+
+  downloadDocument(document: any): Observable<Blob> {
+    const blob = new Blob([document.content], { type: 'text/plain' });
+    return of(blob);
   }
 }
