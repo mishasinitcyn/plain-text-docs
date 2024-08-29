@@ -5,3 +5,5 @@ export const Categories: {[key: string]: string} = {
     'Application': 'red',
     'Other': 'grey'
 }
+
+export const FileTypes = ['txt', 'md']

@@ -25,14 +25,18 @@
       <nz-form-item>
         <nz-form-label>Category</nz-form-label>
         <nz-form-control>
-          <input nz-input formControlName="category" placeholder="Document Category" />
+          <nz-select formControlName="category" nzPlaceHolder="Select a category">
+            <nz-option *ngFor="let category of categories | keyvalue" [nzValue]="category.key" [nzLabel]="category.key"></nz-option>
+          </nz-select>
         </nz-form-control>
       </nz-form-item>
     
       <nz-form-item>
         <nz-form-label>File Type</nz-form-label>
         <nz-form-control>
-          <input nz-input formControlName="file_type" placeholder="File Type" />
+          <nz-select formControlName="file_type" nzPlaceHolder="Select a file type">
+            <nz-option *ngFor="let fileType of fileTypes" [nzValue]="fileType" [nzLabel]="fileType"></nz-option>
+          </nz-select>
         </nz-form-control>
       </nz-form-item>
     

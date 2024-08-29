@@ -4,6 +4,7 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { NzMessageService } from 'ng-zorro-antd/message';
 import { Router } from '@angular/router';
 import { DocumentService } from '../services/document.service';
+import { Categories, FileTypes } from '../interface';
 
 @Component({
   selector: 'app-document-create',
@@ -12,6 +13,8 @@ import { DocumentService } from '../services/document.service';
 })
 export class DocumentCreateComponent {
   documentForm: FormGroup;
+  categories = Categories;
+  fileTypes = FileTypes;
 
   constructor(
     private fb: FormBuilder,
