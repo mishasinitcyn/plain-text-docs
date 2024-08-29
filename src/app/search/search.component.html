@@ -18,7 +18,7 @@
       </div>
 
 
-      <nz-card class="search-result" *ngFor="let document of searchResults">
+      <nz-card class="search-result" *ngFor="let document of searchResults" [routerLink]="['/document', document.id]">
         <div class="result-header">
           <h3 nz-typography>{{ document.title }}</h3>
           <nz-tag [nzColor]="categories[document.category]">{{ document.category }}</nz-tag>
