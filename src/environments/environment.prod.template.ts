@@ -13,4 +13,8 @@ export const environment = {
     dbName: '${DB_NAME}',
     dbUser: '${DB_USER}',
     dbPassword: '${DB_PASSWORD}',
+
+    // Meilisearch
+    meiliHost: '${MEILI_HOST}',
+    meiliMasterKey: '${MEILI_MASTER_KEY}'
   };

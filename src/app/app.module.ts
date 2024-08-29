@@ -38,6 +38,7 @@ import { NzMessageModule } from 'ng-zorro-antd/message';
 import { NzTypographyModule } from 'ng-zorro-antd/typography';
 import { NzAvatarModule } from 'ng-zorro-antd/avatar';
 import { NzToolTipModule } from 'ng-zorro-antd/tooltip';
+import { NzSelectModule } from 'ng-zorro-antd/select';
 import { IconDefinition } from '@ant-design/icons-angular';
 import { NzDividerModule } from 'ng-zorro-antd/divider';
 import { NzIconModule } from 'ng-zorro-antd/icon';
@@ -48,6 +49,7 @@ import { LayoutComponent } from './assets/layout/layout.component';
 import { DocumentInfoComponent } from './document-info/document-info.component';
 import { DownloadOutline, GithubOutline, LikeOutline, MediumOutline, YoutubeOutline } from '@ant-design/icons-angular/icons';
 import { DocumentCreateComponent } from './document-create/document-create.component';
+import { SearchComponent } from './search/search.component';
 const icons: IconDefinition[] = [ GithubOutline, MediumOutline, YoutubeOutline, DownloadOutline, LikeOutline ];
 
 
@@ -58,7 +60,8 @@ const icons: IconDefinition[] = [ GithubOutline, MediumOutline, YoutubeOutline, 
     HeaderComponent,
     LayoutComponent,
     DocumentInfoComponent,
-    DocumentCreateComponent
+    DocumentCreateComponent,
+    SearchComponent
   ],
   imports: [
     BrowserModule,
@@ -85,9 +88,11 @@ const icons: IconDefinition[] = [ GithubOutline, MediumOutline, YoutubeOutline, 
     NzLayoutModule,
     NzIconModule.forRoot(icons),
     NzModalModule,
+    NzFormModule,
     NzTypographyModule,
     NzAvatarModule,
     NzToolTipModule,
+    NzSelectModule,
     ClipboardModule,
     NzMessageModule,
     NzDividerModule,

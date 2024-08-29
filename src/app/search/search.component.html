@@ -1,0 +1,59 @@
+<app-layout>
+    <div class="search-container">
+      <div class="search-card">
+        <!-- <h2 nz-typography>Search Documents</h2> -->
+        <nz-input-group [nzSuffix]="suffixIconSearch">
+          <input type="text" nz-input placeholder="Search documents..." [(ngModel)]="searchQuery" (ngModelChange)="search($event)" (keyup)="onKeyUp($event)" (keydown.enter)="search(searchQuery)">
+        </nz-input-group>
+        <ng-template #suffixIconSearch><i nz-icon nzType="search"></i></ng-template>
+        <!-- <div class="search-filters">
+          <nz-select [(ngModel)]="selectedCategory" (ngModelChange)="onCategoryChange()">
+            <nz-option *ngFor="let category of categories" [nzValue]="category" [nzLabel]="category"></nz-option>
+          </nz-select>
+          <nz-select [(ngModel)]="sortBy" (ngModelChange)="onSortChange()">
+            <nz-option nzValue="date" nzLabel="Date"></nz-option>
+            <nz-option nzValue="likes" nzLabel="Likes"></nz-option>
+          </nz-select>
+        </div> -->
+      </div>
+
+
+      <nz-card class="search-result" *ngFor="let document of searchResults">
+        <div class="result-header">
+          <h3 nz-typography>{{ document.title }}</h3>
+          <nz-tag [nzColor]="categories[document.category]">{{ document.category }}</nz-tag>
+        </div>
+        <!-- <span nz-typography nzType="secondary">Last updated: {{ document.updated_at | date:'yyyy-MM-dd' }}</span> -->
+        <p nz-typography class="result-description">{{ document.description }}</p>
+        <div class="result-footer">
+          <span class="likes">
+            <i nz-icon nzType="like" nzTheme="outline"></i>
+            {{ document.likes_count }} likes
+          </span>
+
+        </div>
+      </nz-card>
+      
+      <!-- 
+      <nz-list [nzDataSource]="searchResults" [nzRenderItem]="item" [nzItemLayout]="'horizontal'">
+        <ng-template #item let-item>
+          <nz-list-item>
+            <nz-list-item-meta
+              [nzTitle]="titleTemplate"
+              [nzDescription]="item.description"
+            >
+              <ng-template #titleTemplate>
+                <a [routerLink]="['/document', item.id]">{{ item.title }}</a>
+              </ng-template>
+            </nz-list-item-meta>
+            <ng-template #likesAction>
+              <span nz-tooltip [nzTooltipTitle]="item.likes_count + ' likes'">
+                <i nz-icon nzType="like" nzTheme="outline"></i> {{ item.likes_count }}
+              </span>
+            </ng-template>
+          </nz-list-item>
+        </ng-template>
+      </nz-list>
+       -->
+    </div>
+  </app-layout>
