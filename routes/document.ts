@@ -14,7 +14,8 @@ router.get('/search', async (req, res) => {
   try {
     let searchParams: any = {
       q: query,
-      limit: 20
+      limit: 20,
+      attributesToRetrieve: ['id', 'title', 'category', 'description', 'likes_count', 'updated_at'],
     };
 
     if (category && category !== 'All') {
